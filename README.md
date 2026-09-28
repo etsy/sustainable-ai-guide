@@ -24,11 +24,11 @@ This section is relevant to anyone using any workplace or coding AI tools.
 
 ## Optimize for environmental impact and transparency
 
-### Adopt common impact measurement approaches
+### Consider standardized impact measurement approaches
 
-AI consumes significant energy and other resources, yet most users lack the data to understand or reduce its impact. Most AI labs do not publish model-level energy or emissions data and while some hyperscalers provide customers with cloud emissions data, it's generally limited to customer-managed cloud workloads rather than enterprise AI applications, especially those using closed models.
+AI consumes energy and other resources, yet most users lack the data to understand or reduce its impact. Most AI labs do not publish model-level energy or emissions data and while some hyperscalers provide customers with cloud emissions data, it's generally limited to customer-managed cloud workloads rather than enterprise AI applications, especially those using closed models.
 
-To address this challenge, on September 29, 2026, Sustainable AI Group launched an [open-source methodology](https://sustainableaigroup.com/CLEERlaunch) to estimate LLM energy use and emissions based on token usage. This kind of methodology can support improved GHG accounting and disclosure. When integrated into internal telemetry, it can show estimated impact alongside cost in the tools engineers already use—helping inform decisions before usage occurs.
+To address this gap, on September 29, 2026, Sustainable AI Group launched an [open-source methodology](https://sustainableaigroup.com/CLEERlaunch) to estimate LLM energy use and emissions based on token usage. This kind of methodology can support improved GHG accounting and disclosure. When integrated into internal telemetry, it can show estimated impact alongside cost in the tools engineers already use—helping inform decisions before usage occurs. Etsy helped develop and test this methodology.
 
 ### Monitor your token usage
 
@@ -45,7 +45,7 @@ For tools that offer it, periodically check your token usage and experiment with
 
 ## Use AI where it is most impactful
 
-Use AI for the greatest impact, i.e. for writing code or technical documents instead of quick Slack messages. **Highly creative tasks are often best performed by humans.**
+Use AI for the greatest impact, i.e. for writing code or technical documents instead of quick Slack messages. In general, AI is most impactful where the effort of a task is high, but the creativity is low. **Highly creative tasks are often best performed by humans.**
 
 ### High-ROI examples
 
@@ -55,25 +55,25 @@ Use AI for the greatest impact, i.e. for writing code or technical documents ins
 - Learning unfamiliar tools in low-risk environments where you can safely experiment and iterate. Ex: first pass at SQL that you'll then get reviewed.
 - Managing repetitive tasks. Ex. build a tool once (like a complex spreadsheet or workflow) that you can keep using repeatedly.
 
-### Low-ROI examples (often worse than doing the work yourself)
+### Low-ROI examples (little or no gain over the work yourself)
 
 - Asking an LLM to repeatedly iterate on content it has generated. **If you know how you want the content modified, make the edits yourself.**
-- Using GenAI to draft sensitive feedback or performance conversations where tone and nuance matter more than speed.
-- Asking an LLM to find documentation that you already know how to find. (Search in Google Drive, Slack, your laptop, Glean instead.)
+- Using GenAI to draft materials where tone and nuance matter more than speed.
+- Asking an LLM to find documentation that you already know how to find through a less intensive tool. 
 
-### Beware AI-by-default
+### Be aware of AI-by-default
 
-- **Turn off auto-enabled AI features** like meeting recording and summarization or Slack channel summarization and only use them sparingly and when you will actually consume their output.
+- **Turn off auto-enabled AI features** like meeting recording and summarization or Slack channel summarization and only use them when you will actually consume their output.
 - **Explicitly search without AI when all you need is search.** Ex: adding "-ai" to a Google search will return pure search results without the AI summary.
 - **Re-evaluate scheduled content.** If you are not reading it or using it frequently, unschedule it.
 
-### Use media generation sparingly
+### Use media generation mindfully
 
 Image and video generation are generally much more energy-intensive, often by orders-of-magnitude (though numbers vary widely by model and over time).
 
 - **Default to text + simple diagrams when possible.** For internal docs, ASCII diagrams or basic charts are often clearer than AI-generated images.
-- **Use AI images where they clearly add value.** Ex: design concepts, marketing explorations, stakeholder-facing visuals.
-- **Avoid high-volume, low-value generation.** Don't generate dozens of near-identical hero images "just to see."
+- **Use AI images where they clearly add value.** Ex: design concepts, marketing explorations, early stakeholder-facing visuals.
+- **Keep generations to a minimum** Generating many similar images with only slight variation is resource intensive and often for very low ROI.
 
 ## Minimize token usage
 
@@ -81,10 +81,10 @@ Image and video generation are generally much more energy-intensive, often by or
 
 Prompting (what you send to an LLM) is what determines the input tokens you use, and it influences the quantity of output tokens returned and the quality of the results.
 
-- **Be succinct and direct.** Excess words are wasted tokens and can contribute to confusion and hallucination, but use enough detail to avoid repeated iteration. The volume of output tokens tends to drive the bulk of energy use (output tokens are generally [significantly more energy-intensive](https://hotcarbon.org/assets/2026/paper-17.pdf) than input tokens), so using more input tokens can be worthwhile to the extent that it results in fewer output tokens.
+- **Be succinct and direct.** Use enough detail to limit repeated iteration, but keep in mind that excess words are wasted tokens and can contribute to confusion and hallucination. The volume of output tokens tends to drive the bulk of energy use (output tokens are generally [significantly more energy-intensive](https://hotcarbon.org/assets/2026/paper-17.pdf) than input tokens), so using more input tokens can be worthwhile to the extent that it results in fewer output tokens.
 - **Ask for shorter, more specific output.** LLMs are verbose, and the volume of output tokens is typically a major driver of energy use; directing them to return less output is often more resource-efficient and can result in more effective written material.
   - "Give me 3 bullet points under 100 words" will help ensure that you don't end up with a wasteful, flowery novel.
-  - "What is the process for submitting a launch questionnaire?" instead of "Tell me about our AI policies."
+  - "What is the process for submitting an expense report?" instead of "Tell me about our travel policies."
 - **Use one prompt per objective.** Asking an LLM to do too many things in a single prompt makes it more prone to forgetting instructions, mixing up roles, hallucinating, and delivering shallow or messy results.
 - **Use a few good examples.** If you are looking for specific output, it's generally most effective to provide a few simple examples instead of a long narrative explaining what you're looking for.
 - **Understand effective prompt keywords:** [Research shows](https://arxiv.org/pdf/2503.10666) that using particular high-specificity action-oriented keyword prompts can result in meaningful energy savings though effects are task-specific.
@@ -112,9 +112,9 @@ As you interact with an AI agent, it saves the conversation history (both your m
 
 ### Choose the smallest effective model and reasoning effort
 
-Energy, latency, and money all roughly scale with model size × reasoning effort × tokens used. Model size determines the AI's overall capabilities; reasoning effort determines how long it works through a request before answering. Model size impacts the amount of computing resources required for both training and inference and the amount of tokens returned (larger models often return more text). Reasoning effort impacts the amount of server time used in processing the task and higher reasoning effort generates more internal "thinking" tokens.
+Energy, latency, and cost all roughly scale with model size × reasoning effort × tokens used. Model size determines the AI's overall capabilities; reasoning effort determines how long it works through a request before answering. Model size impacts the amount of computing resources required for both training and inference and the amount of tokens returned (larger models often return more text). Reasoning effort impacts the amount of server time used in processing the task and higher reasoning effort generates more internal "thinking" tokens.
 
-In general prefer smaller, task-appropriate models until you have evidence that you need something larger.
+In general, prefer smaller, task-appropriate models until you have evidence that you need something larger.
 
 - Explore coding tools' **model auto-selection** features. This can help optimize for the task you're working on without significant research or thought on your end. If you use this, it's a good idea to gut-check its recommendations frequently.
   - [LLMRouter](https://github.com/ulab-uiuc/LLMRouter) automatically selects models based on each request.
@@ -148,7 +148,7 @@ Track efficiency metrics relevant to your product and use that data to prioritiz
   - Approximate tokens per request
   - Skill usage
 - Enforce per-feature "token error budgets" – if the value exceeds the limit, a design improvement or model downgrade is warranted
-- Monitor for unintended usage patterns – ex: mobile clients churning through retries, or bots hammering conversational features.
+- Monitor for unintended usage patterns – ex: excessive retries or site scrapers
 
 ## Use AI where it is most impactful (continued)
 
@@ -167,7 +167,7 @@ Track efficiency metrics relevant to your product and use that data to prioritiz
 - **Prefer RAG over full text.** Use models mainly as reasoners over retrieved snippets, not for reading full product descriptions on every request.
 - **Leverage prefix caching where possible.** If there are elements of a prompt that stay constant, begin the prompt with them. LLMs can cache prefixes, saving cost, time, and energy.
 - **Batch or precompute where latency and UX allow.** Pre-generate embeddings, classifications, or summaries offline once daily in a batch context and serve them from storage, instead of regenerating them per page view.
-- **Use AI only upon request.** Depending on the desired UX or feature, consider calling an LLM at request time – only when needed instead of pre-emptively for all data.
+- **Use AI only upon request.** In engineering contexts, depending on the desired UX or feature, consider calling an LLM at request time – only when needed instead of pre-emptively for all data.
 - **Use multi-stage pipelines:**
   - Stage 1: Cheap filter narrows work (keyword / heuristics / fast model).
   - Stage 2: Heavier model only for what truly needs deep reasoning.
