@@ -53,7 +53,7 @@ Use AI for the greatest impact, i.e. for writing code or technical documents ins
 - Synthesizing information across sources. Ex: strategy docs + goals → one-page summary.
 - Drafting complex, multi-section docs. Ex: first draft of a planning doc that you'll heavily edit.
 - Learning unfamiliar tools in low-risk environments where you can safely experiment and iterate. Ex: first pass at SQL that you'll then get reviewed.
-- Managing repetitive tasks. Ex. build a tool once (like a complex spreadsheet or workflow) that you can keep using repeatedly.
+- Managing repetitive tasks. Ex: build a tool once (like a complex spreadsheet or workflow) that you can keep using repeatedly.
 
 ### Low-ROI examples (little or no gain over the work yourself)
 
@@ -73,7 +73,7 @@ Image and video generation are generally much more energy-intensive, often by or
 
 - **Default to text + simple diagrams when possible.** For internal docs, ASCII diagrams or basic charts are often clearer than AI-generated images.
 - **Use AI images where they clearly add value.** Ex: design concepts, marketing explorations, early stakeholder-facing visuals.
-- **Keep generations to a minimum** Generating many similar images with only slight variation is resource intensive and often for very low ROI.
+- **Keep generations to a minimum.** Generating many similar images with only slight variation is resource intensive and often for very low ROI.
 
 ## Minimize token usage
 
